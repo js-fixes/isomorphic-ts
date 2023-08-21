@@ -90,7 +90,7 @@ class Response {
 
     constructor(nodeResponse) {
         this.#nodeResponse = nodeResponse;
-        this.body = streamReadableToWeb(nodeResponse.body);
+        this.body = nodeResponse.body instanceof ReadableStream ? nodeResponse.body : streamReadableToWeb(nodeResponse.body);
     }
 
     arrayBuffer() { return this.#nodeResponse.arrayBuffer(); }
