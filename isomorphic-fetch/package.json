@@ -1,6 +1,6 @@
 {
   "name": "@libsql/isomorphic-fetch",
-  "version": "0.1.7-pre",
+  "version": "0.1.8-pre",
   "keywords": ["fetch", "isomorphic", "node", "deno", "workers"],
   "description": "Isomorphic fetch() in Node, Deno and Cloudflare Workers",
   "repository": {
@@ -19,12 +19,14 @@
   "exports": {
     ".": {
       "import": {
+        "bun": "./web.mjs",
         "node": "./node.mjs",
         "deno": "./web.mjs",
         "workerd": "./web.mjs",
         "default": "./web.mjs"
       },
       "require": {
+        "bun": "./web.mjs",
         "node": "./node.cjs",
         "workerd": "./web.cjs",
         "default": "./web.cjs"
